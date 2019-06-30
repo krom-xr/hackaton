@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-
   db.one(`select * from nvk_users where user_id='${req.params.id}'`)
   .then(function (data) {
     res.send(data);

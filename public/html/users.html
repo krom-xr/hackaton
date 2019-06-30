@@ -1,9 +1,9 @@
-<h1>Here is a sample template {{=it.foo}}</h1>
-<ul>
+<h1>Users list</h1>
+<ul class="list-group">
   {{~ it.users: user }}
-  <li>
+  <li class="list-group-item">
+    <a href="#users/{{=user.user_id}}"><b>{{=user.user_name}}</b></a><br>
     {{=user.user_family}} <br>
-    <a href="#users/{{=user.user_id}}">{{=user.user_name}}</a>
   </li>
   {{~}}
 </ul>
