@@ -4,26 +4,24 @@ var db = require('../models/db');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-
   db.many('select * from nvk_users where true;')
   .then(function (data) {
-    //console.log('DATA:  asd2 asdf<D-[>', data)
-    //
     res.send(data);
-    //
-    //asdf
-
-    //res.send('abcdef     12343214213');
   })
-
   .catch(function (error) {
     console.log('ERROR:', error)
   })
+});
 
+router.get('/:id', function(req, res, next) {
 
-
-
+  db.one(`select * from nvk_users where user_id='${req.params.id}'`)
+  .then(function (data) {
+    res.send(data);
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  })
 });
 
 

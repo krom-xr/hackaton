@@ -16,17 +16,12 @@ function initRouter() {
     },
 
     'users': function () {
-
-      utils.render('html/users.html', {foo: 'bar'});
-
-      return 'Users list';
-
-      //return 'Users list ';
+      Users.renderUsers();
     },
 
     // #users/chris -> r.params.name will equal 'chris'
-    'users/:name': function ({name}) {
-      return 'User ' + name;
+    'users/:id': function (id) {
+      Users.renderUser(id);
     },
 
 
