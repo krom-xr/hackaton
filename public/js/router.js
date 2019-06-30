@@ -16,8 +16,12 @@ function initRouter() {
     },
 
     'users': function () {
-      console.log('users list');
-      return 'Users list ';
+
+      utils.render('html/users.html', {foo: 'bar'});
+
+      return 'Users list';
+
+      //return 'Users list ';
     },
 
     // #users/chris -> r.params.name will equal 'chris'
@@ -41,7 +45,7 @@ function initRouter() {
     const hash = location.hash || '#';
 
     // Do something useful with the result of the route
-    document.body.textContent = route(hash.slice(1));
+    route(hash.slice(1));
   }
 
   window.addEventListener('hashchange', processHash);

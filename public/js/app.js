@@ -1,4 +1,7 @@
 window.onload = function() {
+
+
+
   initRouter();
 }
 
