@@ -5,8 +5,8 @@ const Users = {
     utils.render('html/users.html', {users: data});
   },
   renderUser: async function(userdata) {
-    console.log(userdata);
     const data = await $.ajax({url: `users/${userdata.id}`})
+    utils.render('html/user.html', {user: data});
   }
 }
 
