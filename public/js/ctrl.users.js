@@ -6,6 +6,10 @@ const Users = {
   renderUser: async function(userdata) {
     const data = await $.ajax({url: `users/${userdata.id}`})
     utils.render('html/user.html', {user: data});
+  },
+  renderStreet: async function() {
+
+    utils.render('html/street.html', {});
   }
 }
 

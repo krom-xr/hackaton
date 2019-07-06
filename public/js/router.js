@@ -13,6 +13,10 @@ function initRouter() {
     'users': function () {
       Users.renderUsers();
     },
+    
+    'street': function () {
+      Users.renderStreet();
+    },
 
     // #users/chris -> r.params.name will equal 'chris'
     'users/:id': function (id) {
