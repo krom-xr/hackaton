@@ -1,5 +1,17 @@
 let map;
 async function initMap() {
+  //HACK - жестокий костыль
+  await new Promise((r)=> setTimeout(()=> r(), 1000));
+
+  const mapEl = document.querySelector('#main-map');
+
+
+  const streetEl = document.querySelector('.streets');
+  mapEl.style.height = window.innerHeight - 250 + 'px';
+  streetEl.style.height = window.innerHeight - 250 + 'px';
+
+  console.log('mapel', mapEl);
+
   await DG.then(function () {
       map = DG.map('main-map', {
           center: [57.15643006398016,65.53371790844729],
