@@ -1,9 +1,42 @@
-<h1>Users list</h1>
-<ul class="list-group">
-  {{~ it.users: user }}
-  <li class="list-group-item">
-    <a href="#users/{{=user.user_id}}"><b>{{=user.user_name}}</b></a><br>
-    {{=user.user_family}} <br>
-  </li>
-  {{~}}
-</ul>
+<link rel="stylesheet" href="../css/style.css">
+
+    <div class="navbar ">
+        <h1 class="mainTitle"> Сервис состояния дорог </h1>
+        <div class="find">
+            <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0 oneButton" type="submit">Поиск</button></input>
+                    
+                    <button class="btn btn-secondary my-2 my-sm-0 twoButton" type="submit">Нарисовать область</button>
+            </form>
+        </div>
+        
+        <div class="menu">
+            <ul  class="filterslist">
+                 <li class="navRoad"><a href="#"> Все</a></li>
+                 <li class="navRoad"><a href="#">Загруженная дорога</a></li>
+                 <li class="navRoad"><a href="#">Убитая дорога</a></li>
+                 <li class="navRoad"><a href="#">В планах ремонта</a></li>
+                 <li class="navRoad"><a href="#">Ямочный ремонт</a></li>
+                 <li class="navRoad"><a href="#"> Отремонтировано</a></li>
+                 <li class="navRoad"><a href="#"> Локальный дефект</a></li>
+             </ul>
+             
+          
+       </div>
+        </div>
+        
+    <section class="mapsStreet">
+      <div class="streets">
+
+        
+      </div>
+      <div class="conteiner maps">
+        <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46759.716005611976!2d65.56672144532142!3d57.15004329646187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43bbe15d51a3b8c7%3A0x9b137b6a2aa36793!2z0KLRjtC80LXQvdGMLCDQotGO0LzQtdC90YHQutCw0Y8g0L7QsdC7Lg!5e0!3m2!1sru!2sru!4v1562403013282!5m2!1sru!2sru" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+    <section>
+        <div class="conteiner tops"></div>
+    </section>
