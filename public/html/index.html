@@ -22,13 +22,13 @@
 
   <div class="menu">
     <ul  class="filterslist">
-       <li class="navRoad"><a href="#"> Все</a></li>
-       <li class="navRoad"><a href="#">Проблемные</a></li>
-       <li class="navRoad"><a href="#">Безпроблемные</a></li>
-       <li class="navRoad"><a href="#">ДТП</a></li>
-       <li class="navRoad"><a href="#">Ямы</a></li>
-       <li class="navRoad"><a href="#">Нет разметки</a></li>
-       <li class="navRoad"><a href="#">Нет дор. знаков</a></li>
+       <li class="navRoad"><a href="#" class='active js-select-filter' data-type="all"> Все</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="with-problems">Проблемные</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="no-problems">Беспроблемные</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="dtp">ДТП</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="hole">Ямы</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="markup_bad">Нет разметки</a></li>
+       <li class="navRoad"><a href="#" class="js-select-filter" data-type="track">Колея</a></li>
     </ul>
  </div>
 </div>
@@ -40,7 +40,7 @@
 
     <!--</div>-->
     <div class="streets" style="width: 300px; height: auto; float: left">
-       <h3>Список улиц</h3>
+       <h3 style="margin-top: 10px">Список улиц</h3>
        <div class="js-finded-roads">
         <div class="listStreet ">
             <div class="about">
@@ -89,9 +89,6 @@
         </div>
        </div>
     </div>
-    <div id="main-map" style="width: calc(100% - 300px); height:400px"></div>
+    <div id="main-map" style="width: calc(100% - 300px); height:500px"></div>
   </div>
-</section>
-<section>
-    <div class="conteiner tops"></div>
 </section>
