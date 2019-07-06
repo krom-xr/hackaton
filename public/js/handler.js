@@ -4,11 +4,17 @@ $(document).ready(()=> {
 
   async function onSearchRoad (e) {
 
-    const value = e.currentTarget.value;
+    const searchWord = document.querySelector('.js-search-roads').value;
+    const currentFilterEl = document.querySelector('.js-select-filter.active')
+    const currentFilter = currentFilterEl.dataset.type;
+
     const roadsDiv = document.querySelector('.js-finded-roads');
+
+
+
     //const streets = [{pr_id: 1, pr_name: 'Республики'}, {pr_id: 2, pr_name: 'Ленина'}]
 
-    const streets = await $.ajax({url: `roads/p_road?search_word=${value}`});
+    const streets = await $.ajax({url: `roads/p_road?search_word=${searchWord}&ftype=${currentFilter}`});
 
     console.log(streets);
 
@@ -106,5 +112,14 @@ $(document).ready(()=> {
   $document.on('click', '.js-street-item', (e)=> {
     const stId = e.currentTarget.dataset.streetId;
     window.location.hash = `street/${stId}`;
+  });
+
+  $document.on('click', '.js-select-filter', (e)=> {
+    document.querySelectorAll('.js-select-filter')
+    .forEach((el)=> el.classList.remove('active'));
+
+    const el = e.currentTarget.classList.add('active');
+
+    onSearchRoad();
   });
 });
