@@ -33,6 +33,14 @@ router.get('/p_road', function(req, res, next) {
 
 router.get('/p_road/:id', function(req, res, next) {
   console.log('abcdef - ', req.params.id);
+  const sql = `select * from p_road where pr_id=${req.params.id};`;
+  db.query(sql)
+  .then(function (data) {
+    res.send(data);
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  })
 });
 
 router.get('/p_type_road', function(req, res, next) {
