@@ -33,6 +33,16 @@ router.get('/p_type_road', function(req, res, next) {
   })
 });
 
+router.get('/p_problems', function(req, res, next) {
+  db.query('Select * from p_problems Where true;')
+  .then(function (data) {
+    res.send(data);
+  })
+  .catch(function (error) {
+    console.log('ERROR:', error)
+  })
+});
+
 router.get('/:id', function(req, res, next) {
   db.one(`select * from nvk_users where user_id='${req.params.id}'`)
   .then(function (data) {
