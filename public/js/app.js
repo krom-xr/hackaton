@@ -1,6 +1,6 @@
 window.onload = async function() {
   initRouter();
-  initMap();
+  //initMap();
 }
 console.log("chgfcjmgfvj,hyg");
 

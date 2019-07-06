@@ -1,17 +1,15 @@
 let map;
-async function initMap() {
+async function initMap(streetId) {
   //HACK - жестокий костыль
   await new Promise((r)=> setTimeout(()=> r(), 1000));
 
   const mapEl = document.querySelector('#main-map');
 
-
-  const streetEl = document.querySelector('.streets');
-  mapEl.style.height = window.innerHeight - 250 + 'px';
-  streetEl.style.height = window.innerHeight - 250 + 'px';
+  if (mapEl)
+    if (!mapEl.dataset.noautoheight)
+      mapEl.style.height = window.innerHeight - 250 + 'px';
 
   console.log('mapel', mapEl);
-
   await DG.then(function () {
       map = DG.map('main-map', {
           center: [57.15643006398016,65.53371790844729],
@@ -30,7 +28,7 @@ async function initMap() {
 
   });
 
-  const dots = await $.ajax({url: 'roads/p_problems'});
+  const dots = await $.ajax({url: `roads/p_problems?street_id=${streetId}`});
 
   console.log('dosts - ', dots);
 
