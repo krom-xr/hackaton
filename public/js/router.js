@@ -2,18 +2,9 @@ function initRouter() {
   const route = Rlite(notFound, {
     // Default route
     '': function () {
-      return 'Home';
+      Roads.renderIndex();
     },
 
-    // #inbox
-    'inbox': function () {
-      return 'Inbox';
-    },
-
-    // #sent?to=john -> r.params.to will equal 'john'
-    'sent': function ({to}) {
-      return 'Sent to ' + to;
-    },
 
     'users': function () {
       Users.renderUsers();
