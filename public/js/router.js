@@ -5,6 +5,10 @@ function initRouter() {
       Roads.renderIndex();
     },
 
+    'street/:strId': function(data) {
+      console.log('strid - ', data.strId);
+      Roads.renderStreet(data.strId);
+    },
 
     'users': function () {
       Users.renderUsers();

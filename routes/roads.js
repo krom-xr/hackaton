@@ -31,6 +31,10 @@ router.get('/p_road', function(req, res, next) {
   })
 });
 
+router.get('/p_road/:id', function(req, res, next) {
+  console.log('abcdef - ', req.params.id);
+});
+
 router.get('/p_type_road', function(req, res, next) {
   db.many('select * from p_type_road where true;')
   .then(function (data) {
