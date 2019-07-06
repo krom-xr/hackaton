@@ -19,7 +19,10 @@ async function initMap() {
   });
 
   const dots = await $.ajax({url: 'roads/p_problems'});
+
+  console.log('dosts - ', dots);
+
   dots.forEach((dot)=> {
-    DG.marker([dot.pp_start_cord_h, dot.pp_start_cord_w]).addTo(map).bindPopup(dot.pp_type_prob_id);
+    DG.marker([dot.pp_start_cord_h, dot.pp_start_cord_w]).addTo(map).bindPopup(dot.ptp_problem_name);
   });
 }

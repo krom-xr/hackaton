@@ -34,7 +34,9 @@ router.get('/p_type_road', function(req, res, next) {
 });
 
 router.get('/p_problems', function(req, res, next) {
-  db.query('Select * from p_problems Where true;')
+  db.query(`select * from p_problems
+            left join p_type_problems on pp_type_prob_id=ptp_id`)
+
   .then(function (data) {
     res.send(data);
   })
