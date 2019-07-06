@@ -40,15 +40,17 @@ color: #fff;
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: center; 
-  margin: 0;
+  justify-content: center;
+  margin-left: 200px;
+
 
 }
 .form-control{
-  width: 939px !important;
+  /*width: 939px !important;*/
   height: 45px;
-  
+
 }
+
 .btn{
   height: 45px;
   font-size: 14px;
@@ -67,28 +69,29 @@ color: #fff;
 .menu{
   height: 30px;
   width: 100%;
-  padding-left: 33px;
+  margin-left: 200px;
 }
 
 
-.filterslist{
+.filterslist {
   width: 1136px;
   list-style: none;
+  /*padding-left: 60px;*/
 }
 .filterslist li{
   float: left;
-  padding-left: 36px;
+  padding-right: 16px;
   color: #fff;
 
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 20px;
-    
+
 }
 
 
-.maps{
+.maps {
   background: #000;
   height: 60%;
 }
