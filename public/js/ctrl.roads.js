@@ -1,5 +1,10 @@
 const Roads = {
   renderIndex: async function() {
-    utils.render('html/index.html');
+
+
+
+    await utils.render('html/index.html');
+    document.querySelector('.js-search-roads').click();
+
   },
 }
