@@ -7,6 +7,7 @@ $(document).ready(()=> {
 
     const streets = await $.ajax({url: `roads/p_road?search_word=${value}`});
 
+    console.log(streets);
 
     const html = _.map(streets, (st)=> {
       return `<li>${st.pr_name}</li>`;
