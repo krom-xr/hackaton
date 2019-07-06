@@ -49,33 +49,35 @@ color: #fff;
   height: 45px;
   
 }
-.btn-secondary{
+.btn{
   height: 45px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
 }
 .oneButton{
   margin-left: -75px;
+  width: 100px;
 }
 .twoButton{
-  margin-left: 20px !important;
+  margin-left: 25px !important;
+  color:  #498AFF;
+
 }
 .menu{
-  padding: 0;
-  margin: 0;
   height: 30px;
-  
+  width: 100%;
+  padding-left: 33px;
 }
-/* .navBar{
-  display: inline-block;
-  margin-top: 50px;
-  color: wheat;
-} */
+
 
 .filterslist{
+  width: 1136px;
   list-style: none;
 }
 .filterslist li{
   float: left;
-  padding-left: 20px;
+  padding-left: 36px;
   color: #fff;
 
   font-style: normal;
