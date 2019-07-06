@@ -47,7 +47,7 @@ router.get('/p_road', function(req, res, next) {
         count_track
         order by 8`;
 
-  if (filter === 'with-problems')
+  else if (filter === 'with-problems')
     sql = `
       select pr_id, pr_name, count (case when ptp_id ='hole' then 1 end) count_hole,
         count (case when position('dtp' in ptp_id) > 0 then 1 end) count_dtp,
@@ -61,6 +61,23 @@ router.get('/p_road', function(req, res, next) {
         and (('%' <> '%' and position(upper('${sword}') in trim(upper(pr_name)) ) > 0)
         or '%' ='%'
         )
+        group by pr_id, pr_name
+        order by 8`;
+
+  else  if (filter !== 'all')
+    sql = `
+      select pr_id, pr_name, count (case when ptp_id ='hole' then 1 end) count_hole,
+        count (case when position('dtp' in ptp_id) > 0 then 1 end) count_dtp,
+        count (case when ptp_id ='markup_none' then 1 end) count_markup_none,
+        count (case when ptp_id ='markup_bad' then 1 end) count_markup_bad,
+        count (case when ptp_id ='track' then 1 end) count_track,
+        count (case when ptp_id <>'none' then 1 end) count_all
+        from p_road ,
+        p_problems left join p_type_problems on pp_type_prob_id = ptp_id
+        where pr_id=pp_road_id
+        and (('%' <> '%' and position(upper('${sword}') in trim(upper(pr_name)) ) > 0)
+        or '%' ='%'
+        ) and position('${filter}' in ptp_id) > 0
         group by pr_id, pr_name
         order by 8`;
 

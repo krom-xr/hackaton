@@ -18,7 +18,7 @@ $(document).ready(()=> {
 
     console.log(streets);
 
-    const html = _.map(streets, (st)=> {
+    let html = _.map(streets, (st)=> {
       const countAll = Number(st.count_all);
       console.log(countAll);
 
@@ -100,6 +100,9 @@ $(document).ready(()=> {
       //<li class="js-street-item" data-street-id="${st.pr_id}">${st.pr_name}</li>`;
     }).join('');
 
+
+    if (!$.trim(html))
+      html = '<li style="padding: 10px">Нет данных по этому фильтру</li>';
 
     roadsDiv.innerHTML = `<ul>${html}</ul>`;
 
