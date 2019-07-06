@@ -13,8 +13,29 @@ $(document).ready(()=> {
     console.log(streets);
 
     const html = _.map(streets, (st)=> {
+      const countAll = Number(st.count_all);
+      console.log(countAll);
+
+      const probHtml = countAll ?
+        `<span class="problem" style="float: right; margin-right: 10px">  ${countAll} Проблемы</span>` :
+        `<span class="problem" style="float: right; margin-right: 10px; color: green">  Нет проблем</span>`;
+
+
+      const probListHtml = countAll ? `
+        <div class="fotci">
+          <div class="foto">
+              <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
+          </div>
+          <div class="foto">
+            <img  src="../img/Ellipse.png" alt="" class="persFoto">
+          </div>
+          <div class="foto">
+              <img src="../img/Ellipse(2).png" alt="" class="persFoto">
+          </div>
+        </div>` : '';
+
       return `
-          <div class="listStreet">
+          <div class="listStreet" style="height: ${countAll ? '115px': '40px'}">
             <div class="about js-street-item" data-street-id="${st.pr_id}">
               <h4>
                 <b style="float: left;display: inline-block;width: calc(100% - 110px);
@@ -22,21 +43,11 @@ $(document).ready(()=> {
                           overflow: hidden;
                           text-overflow: ellipsis;">${st.pr_name}</b>
 
-                <span class="problem" style="float: right; margin-right: 10px">  ${st.count_all} Проблемы</span>
+                ${probHtml}
               </h4>
 
               <div class="clearfix"></div>
-              <div class="fotci">
-                <div class="foto">
-                    <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                  <img  src="../img/Ellipse.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                    <img src="../img/Ellipse(2).png" alt="" class="persFoto">
-                </div>
-              </div>
+              ${probListHtml}
             </div>
           </div>`;
 
