@@ -21,19 +21,52 @@ $(document).ready(()=> {
         `<span class="problem" style="float: right; margin-right: 10px; color: green">  Нет проблем</span>`;
 
 
-      const probListHtml = countAll ? `
-        <div class="fotci">
+      let probListHtmlItems = ``;
+      if (st.count_dtp && st.count_dtp !== "0")
+        probListHtmlItems += `
           <div class="foto">
               <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
-          </div>
+          </div>`;
+
+      if (st.count_hole && st.count_hole !== "0")
+        probListHtmlItems += `
           <div class="foto">
-            <img  src="../img/Ellipse.png" alt="" class="persFoto">
-          </div>
+              <img  src="../img/hole.png" alt="" class="persFoto">
+          </div>`;
+
+      if (st.count_markup_bad && st.count_markup_bad !== "0")
+        probListHtmlItems += `
           <div class="foto">
-              <img src="../img/Ellipse(2).png" alt="" class="persFoto">
-          </div>
+              <img  src="../img/Ellipse(2).png" alt="" class="persFoto">
+          </div>`;
+
+      if (st.count_markup_none && st.count_markup_none !== "0")
+        probListHtmlItems += `
+          <div class="foto">
+              <img  src="../img/Ellipse(2).png" alt="" class="persFoto">
+          </div>`;
+
+      if (st.count_track && st.count_track !== "0")
+        probListHtmlItems += `
+          <div class="foto">
+              <img  src="../img/coleya.png" alt="" class="persFoto">
+          </div>`;
+
+
+      const probListHtml = countAll ? `
+        <div class="fotci">
+          ${probListHtmlItems}
         </div>` : '';
 
+          //<div class="foto">
+              //<img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
+          //</div>
+          //<div class="foto">
+            //<img  src="../img/Ellipse.png" alt="" class="persFoto">
+          //</div>
+          //<div class="foto">
+              //<img src="../img/Ellipse(2).png" alt="" class="persFoto">
+          //</div>
       return `
           <div class="listStreet" style="height: ${countAll ? '115px': '40px'}">
             <div class="about js-street-item" data-street-id="${st.pr_id}">
