@@ -1,8 +1,7 @@
 const Users = {
   renderUsers: async function() {
-    const data = await $.ajax({url: 'users'});
-    console.log(data);
-    utils.render('html/users.html', {users: data});
+
+    utils.render('html/users.html', {});
   },
   renderUser: async function(userdata) {
     const data = await $.ajax({url: `users/${userdata.id}`})
