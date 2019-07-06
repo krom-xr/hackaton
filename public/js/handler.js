@@ -13,7 +13,41 @@ $(document).ready(()=> {
     console.log(streets);
 
     const html = _.map(streets, (st)=> {
-      return `<li class="js-street-item" data-street-id="${st.pr_id}">${st.pr_name}</li>`;
+      return `
+          <div class="listStreet">
+            <div class="about js-street-item" data-street-id="${st.pr_id}">
+              <h4>
+                <b style="float: left;display: inline-block;width: calc(100% - 110px);
+                          white-space: nowrap;
+                          overflow: hidden;
+                          text-overflow: ellipsis;">${st.pr_name}</b>
+
+                <span class="problem" style="float: right; margin-right: 10px">  ${st.count_all} Проблемы</span>
+              </h4>
+
+              <div class="clearfix"></div>
+              <div class="fotci">
+                <div class="foto">
+                    <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
+                </div>
+                <div class="foto">
+                  <img  src="../img/Ellipse.png" alt="" class="persFoto">
+                </div>
+                <div class="foto">
+                    <img src="../img/Ellipse(2).png" alt="" class="persFoto">
+                </div>
+              </div>
+            </div>
+          </div>`;
+
+
+
+
+
+
+
+
+      //<li class="js-street-item" data-street-id="${st.pr_id}">${st.pr_name}</li>`;
     }).join('');
 
 
