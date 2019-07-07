@@ -125,4 +125,72 @@ $(document).ready(()=> {
 
     onSearchRoad();
   });
+
+  $document.on('click', '.js-repair-request', (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+
+    $(document.body).append(`<dialog style="width: 80%;
+                                            background: white;
+                                            height: auto;
+                                            margin: 0 auto;
+                                            top: 150px;
+                                            padding: 20px;
+                                            border-radius: 20px;
+                                            position: fixed;">
+
+                              <form class="form">
+                                <div>
+                                  <label> Плановая дата начала работ</label>
+                                  <input class="form-control" type="date" value="2019-12-21">
+                                </div>
+                                <br />
+                                <div>
+                                  <label>Плановая дата завершения работ</label>
+                                  <input class="form-control" type="date" value="2020-01-30">
+                                </div>
+                                <br />
+                                <div>
+                                  <label> Бюджет </label>
+                                  <input class="form-control" value="500 000">
+                                </div>
+                                <br />
+                                <div>
+                                  <label>Тип ремонта</label>
+                                  <select class="form-control">
+                                    <option>Полный</option>
+                                    <option>Ямочный</option>
+                                  </select>
+                                </div>
+                                <br />
+                                <div>
+                                  <label>Километраж</label>
+                                  <input class="form-control" value="10км">
+                                </div>
+                                <br />
+                                <br />
+                                <div>
+                                  <button class="btn pull-left btn-success js-send-btn">Отправить</button>
+                                  <button class="btn pull-rigth js-cancel-btn" style="float: right">Отмена</button>
+                                </div>
+                                <div class="clearfix"></div>
+                              </form>
+                            </dialog>`);
+
+    document.querySelector('dialog').showModal();
+
+  });
+
+  $document.on('click', '.js-send-btn', function() {
+
+    $(this).closest('dialog').remove();
+
+    setTimeout(()=> {
+      alert('Заявка отправлена');
+    }, 300);
+  });
+
+  $document.on('click', '.js-cancel-btn', function() {
+    $(this).closest('dialog').remove();
+  });
 });

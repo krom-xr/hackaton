@@ -38,7 +38,7 @@ async function initMap(streetId) {
           <tr>
             <td scope="row">${new Date(d.pp_reg_date).toDateString()}</td>
             <td>${d.ptp_problem_name}</td>
-            <td><a href="" style="color: green">Заявка на ремонт</a></td>
+            <td><a href="" class="js-repair-request" style="color: green">Заявка на ремонт</a></td>
           </tr>`;
     }).join('');
 
