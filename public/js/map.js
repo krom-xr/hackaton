@@ -29,8 +29,10 @@ async function initMap(streetId) {
   });
 
   const dots = await $.ajax({url: `roads/p_problems?road_id=${streetId}`});
+  const dotsEl = document.querySelector('.js-dots-list-holder');
+  if (dotsEl)
+    dotsEl.innerHTML = 'ha ha ha';
 
-  console.log('dosts - ', dots);
 
   dots.forEach((dot)=> {
     DG.marker([dot.pp_start_cord_h, dot.pp_start_cord_w]).addTo(map).bindPopup(dot.ptp_problem_name);
