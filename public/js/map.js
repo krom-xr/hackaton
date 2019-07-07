@@ -29,9 +29,24 @@ async function initMap(streetId) {
   });
 
   const dots = await $.ajax({url: `roads/p_problems?road_id=${streetId}`});
+  console.log('dots - ', dots);
   const dotsEl = document.querySelector('.js-dots-list-holder');
-  if (dotsEl)
-    dotsEl.innerHTML = 'ha ha ha';
+  if (dotsEl) {
+
+    const html = dots.map((d)=> {
+      return `
+          <tr>
+            <td scope="row">${new Date(d.pp_reg_date).toDateString()}</td>
+            <td>${d.ptp_problem_name}</td>
+            <td><a href="" style="color: green">Заявка на ремонт</a></td>
+          </tr>`;
+    }).join('');
+
+
+
+
+    dotsEl.innerHTML = html;
+  }
 
 
   dots.forEach((dot)=> {
