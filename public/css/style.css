@@ -290,6 +290,7 @@ dialog::backdrop {
   height: 290px;
   width: 533px;
   background: url(../img/Графиик.png);
+  background-repeat: no-repeat;
 }
 .char{
   height:10px;
