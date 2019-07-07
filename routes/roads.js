@@ -33,7 +33,7 @@ router.get('/p_road', function(req, res, next) {
         0 count_markup_none,
         0 count_markup_bad,
         0 count_track,
-        count (*) count_all
+        0 count_all
         from p_road
         where not exists (select 'x' from p_problems where pp_road_id=pr_id)
         and (('%' <> '%' and position(upper('${sword}') in trim(upper(pr_name)) ) > 0)
