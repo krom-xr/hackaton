@@ -28,7 +28,7 @@ async function initMap(streetId) {
 
   });
 
-  const dots = await $.ajax({url: `roads/p_problems?street_id=${streetId}`});
+  const dots = await $.ajax({url: `roads/p_problems?road_id=${streetId}`});
 
   console.log('dosts - ', dots);
 

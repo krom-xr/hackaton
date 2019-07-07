@@ -119,9 +119,22 @@ router.get('/p_type_road', function(req, res, next) {
 });
 
 router.get('/p_problems', function(req, res, next) {
-  db.query(`select * from p_problems
-            left join p_type_problems on pp_type_prob_id=ptp_id`)
+  let sql = '';
+  if (req.query.road_id && req.query.road_id !== 'undefined') {
+    sql = `select * from p_problems
+            left join p_type_problems on pp_type_prob_id=ptp_id
+            where pp_road_id = ${req.query.road_id}`;
+  }
+  else {
+    sql = `
+      select * from p_problems
+        left join p_type_problems on pp_type_prob_id=ptp_id`;
+  }
 
+
+
+
+  db.query(sql)
   .then(function (data) {
     res.send(data);
   })
