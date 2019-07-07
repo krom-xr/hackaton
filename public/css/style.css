@@ -246,8 +246,13 @@ html{
   margin: 0 auto;
   padding: 0;
   background:  #F5F5F5;
-  /* margin-top: 30px; */
-
+}
+.prozi{
+  font-size: 50px;
+  color: #151515;
+  margin-top: -170px;
+  margin-left: 180px;
+  opacity: inherit;
 }
 .statisticOne{
   margin-top: 30px;
