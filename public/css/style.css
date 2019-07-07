@@ -42,7 +42,7 @@ color: #fff;
   height: auto;
   display: flex;
   justify-content: center;
-  margin-left: 200px;
+  margin-left: 280px;
 
 
 }
@@ -70,7 +70,7 @@ color: #fff;
 .menu{
   height: 30px;
   width: 100%;
-  margin-left: 200px;
+  margin-left: 280px;
 }
 
 
@@ -172,7 +172,7 @@ color: #fff;
 /* //////SREET PAGE////// */
 
 .streetPage{
-  background: url(../img/Rectangle\ 7\(1\).png);
+  background: url(../img/st_resp.png);
   height: 250px;
 }
 
@@ -236,7 +236,75 @@ color: #fff;
 .table-stat{
   background:#F5F8FF;
 }
-
 dialog::backdrop {
   background: rgba(0,0,0,.25);
+}
+.statGraff{
+  height: 100vh;
+  width:  1146px;
+  margin: 0 auto;
+  padding: 0;
+  /* margin-top: 30px; */
+
+}
+.statisticOne{
+  margin-top: 30px;
+  margin-right: 30px;
+  width: 656px;
+  height: 450px;
+  float: left;
+}
+.statisticTwo{
+  margin-top: 30px;
+  width: 460px;
+  height: 450px;
+  float: right;
+}
+.titleCircle, .titleGraf{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #2F3135;
+}
+.punctCircle{
+  font-size: 12px;
+  line-height: 14px;
+  color:#48494A;
+}
+.punctCircle li {
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 7px;
+}
+.block1{
+  width: 656px;
+  height: 400px;
+}
+
+
+.block2{
+  width: 460px;
+  height: 300px;
+}
+.grafikLine{
+  height: 290px;
+  width: 533px;
+  background: url(../img/Графиик.png);
+}
+.char{
+  height:10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #498AFF;
+  margin-bottom: -12px;
+  margin-left: -10px;
+}
+.char2{
+  background-color: #3AB4F2;
+}
+.char3{
+  background-color: #6DF8B9;
+}
+.char3{
+  background-color: #25E6EC;
 }

@@ -62,7 +62,36 @@ const Roads = {
 
 
 
+    const bgrEl = document.querySelector('.streetPage');
+    if (id === '1')
+      bgrEl.style.background = 'url(../img/st_resp.png)';
 
+    if (id === '2')
+      bgrEl.style.background = 'url(../img/st_vor.png)';
+
+    if (id === '3')
+      bgrEl.style.background = 'url(../img/st_50let.png)';
+
+    if (id === '4')
+      bgrEl.style.background = 'url(../img/st_yalt_tr.png)';
+
+    if (id === '5')
+      bgrEl.style.background = 'url(../img/st_perm.png)';
+
+    if (id === '6')
+      bgrEl.style.background = 'url(../img/st_soyuz.png)';
+
+    if (id === '15')
+      bgrEl.style.background = 'url(../img/st_shir.png)';
+
+    if (id === '16')
+      bgrEl.style.background = 'url(../img/st_len.png)';
+
+    if (id === '17')
+      bgrEl.style.background = 'url(../img/st_kolh.png)';
+
+    if (id === '18')
+      bgrEl.style.background = 'url(../img/st_prof.png)';
   },
 
 

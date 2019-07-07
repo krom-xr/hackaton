@@ -1,3 +1,4 @@
+<script src="../js/diagramDTP.js"></script>
 <div class="conteiner" style="margin: 0 auto; background: white">
   <div class="streetPage">
       <ul class="textStreet">
@@ -97,10 +98,33 @@
     <canvas id="myChart" width="400" height="150"></canvas>
   </div>
 
-  <div class="statistic" style="margin: 0 auto">
-    <div style="margin-bottom: 20px">
-      <h4>Количество ДТП</h4>
-    </div>
-    <canvas id="myChart" width="400" height="150"></canvas>
+<div class=" statGraff">
+  <div class="statistic statisticOne">
+      <div class="block1">
+        <p class="titleGraf">Количество ДТП</p>
+        <div class="grafikLine"></div>
+      </div>
+  </div>
+
+  <div class="statistic statisticTwo">
+    <div class="titleCircle">Причины аварий по неудовлетворительному состоянию дорог </div>
+      <div class="block2">
+        <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="#fff"></circle>
+          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#3AB4F2" stroke-width="9"></circle>
+          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#25E6EC" stroke-width="9" stroke-dasharray="40 60" stroke-dashoffset="15"></circle>
+          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#25E6EC" stroke-width="9" stroke-dasharray="20 80" stroke-dashoffset="18"></circle>
+          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#6DF8B9" stroke-width="9" stroke-dasharray="30 70" stroke-dashoffset="25"></circle>
+          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#498AFF" stroke-width="10" stroke-dasharray="30 70" stroke-dashoffset="42"></circle>
+          <!-- unused 10% -->
+        </svg>
+      </div>
+      <ul class="punctCircle">
+          <li><div class="char"></div>недостатки зимнего содержания</li>
+          <li><div class="char char2"></div>отсутствие дорожных знаков</li>
+          <li><div class="char char3"></div>отсутствие, плохая различимость горизонтальной разметки</li>
+          <li><div class="char char4"></div>отсутствие пешеходных ограждений в необходимых местах</li>
+        </ul>
+    </div >
   </div>
 </div>
