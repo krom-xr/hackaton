@@ -134,7 +134,7 @@ $(document).ready(()=> {
                                             background: white;
                                             height: auto;
                                             margin: 0 auto;
-                                            top: 150px;
+                                            top: 50px;
                                             padding: 20px;
                                             border-radius: 20px;
                                             position: fixed;">
