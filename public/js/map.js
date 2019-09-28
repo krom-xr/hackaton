@@ -12,8 +12,9 @@ async function initMap(streetId) {
   console.log('mapel', mapEl);
   await DG.then(function () {
       map = DG.map('main-map', {
-          center: [57.15643006398016,65.53371790844729],
-          zoom: 13
+          //center: [57.15643006398016,65.53371790844729],
+          center: [55.612162, 49.299543],
+          zoom: 16
       });
 
 

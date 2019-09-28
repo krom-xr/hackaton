@@ -48,6 +48,11 @@ function initRouter() {
 
     'comments': function() {
       Tasks.renderComments();
+    },
+    'maps': function () {
+      Tasks.renderMaps();
+      initMap();
+
     }
 
   });
