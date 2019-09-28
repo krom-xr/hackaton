@@ -13,7 +13,7 @@ function initRouter() {
     'users': function () {
       Users.renderUsers();
     },
-    
+
     'street': function () {
       Users.renderStreet();
     },
@@ -27,6 +27,12 @@ function initRouter() {
     // #logout
     'logout': function () {
       return 'Logout';
+    },
+
+
+    'tasks': function() {
+      console.log('tasks');
+      Tasks.renderTasks();
     }
   });
 

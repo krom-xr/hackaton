@@ -1,94 +1,31 @@
-<!--<div>-->
-  <!--<input class="js-search-roads" type="text" class="text" value="" name="" placeholder="Введите название улицы">-->
-  <!--<div class="js-finded-roads"></div>-->
-<!--</div>-->
-
-<!--<div>-->
-    <!--<div id="main-map" style="width:100%; height:400px"></div>-->
-<!--</div>-->
-
-
-
-
-<div class="navbar ">
-  <h1 class="mainTitle"> Сервис состояния дорог </h1>
-  <div class="find">
-      <form class="form-inline" style="width: 100%">
-        <input class="form-control js-search-roads" type="search" placeholder="Поиск" style="width: calc(100% - 230px)"/>
-        <button class="btn btn-primary oneButton" type="submit">Найти</button></input>
-        <!--<button class="btn btn-light twoButton" type="submit">Нарисовать область</button>-->
-      </form>
+<div class="navbar">
+  <div class='tasks' style="width: 400px">
+    <div class='task-wrapper alert-success'>
+      <div>
+        <div style="float: left; width: 60%; padding: 16px">
+          Сделать что -то про и то-то
+          Сделать что -то про и то-то
+          Сделать что -то про и то-то
+          Сделать что -то про и то-то
+          Сделать что -то про и то-то
+        </div>
+        <div style="padding: 8px; width: 40%; float: right">
+          <div style="margin-bottom: 10px">
+            <button class="btn btn-success" style="width: 100%">Решить</button>
+          </div>
+          <div>
+            <button class="btn btn-danger"  style="width: 100%">Пропустить</button>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <progress class="progress-bar" style="width: 100%" value="0.5"></progress>
+    </div>
   </div>
 
-  <div class="menu">
-    <ul  class="filterslist">
-       <li class="navRoad"><a href="#" class='active js-select-filter' data-type="all"> Все</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="with-problems">Проблемные</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="no-problems">Беспроблемные</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="dtp">ДТП</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="hole">Ямы</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="markup_bad">Нет разметки</a></li>
-       <li class="navRoad"><a href="#" class="js-select-filter" data-type="track">Колея</a></li>
-    </ul>
- </div>
+
+
+
+
 </div>
 
-<section class="mapsStreet">
-  <div class="conteiner maps">
-    <!--<div class="streets js-finded-roads" >-->
-                        <!--Список улиц-->
-
-    <!--</div>-->
-    <div class="streets" style="width: 300px; height: auto; float: left; overflow: auto">
-       <h3 style="margin-top: 10px">Список улиц</h3>
-       <div class="js-finded-roads">
-        <div class="listStreet ">
-            <div class="about">
-                <h4>Закалужская <span class="problem">  3 Проблемы</span></h4>
-                    <div class="fotci clearfix">
-                <div class="foto">
-                    <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                  <img  src="../img/Ellipse.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                    <img src="../img/Ellipse(2).png" alt="" class="persFoto">
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="listStreet">
-            <div class="about">
-                <h4>Полевая <span class="problem">  3 Проблемы</span></h4>
-                    <div class="fotci clearfix">
-                <div class="foto">
-                    <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                  <img  src="../img/Ellipse.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                    <img src="../img/Ellipse(2).png" alt="" class="persFoto">
-                </div>
-              </div>
-            </div>
-        </div>
-        <div class="listStreet">
-            <div class="about">
-                <h4> Широтная<span class="problem">  2 Проблемы</span></h4>
-                    <div class="fotci clearfix">
-                <div class="foto">
-                    <img  src="../img/collision-icon-2734-0.png" alt="" class="persFoto">
-                </div>
-                <div class="foto">
-                    <img src="../img/Ellipse(2).png" alt="" class="persFoto">
-                </div>
-              </div>
-            </div>
-        </div>
-       </div>
-    </div>
-    <div id="main-map" style="width: calc(100% - 300px); height:500px"></div>
-  </div>
-</section>
