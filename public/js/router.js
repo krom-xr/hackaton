@@ -29,6 +29,17 @@ function initRouter() {
       return 'Logout';
     },
 
+    'login': function () {
+
+      const token = localStorage.getItem('token');
+      if (token)
+        location.hash = '#tasks';
+
+
+
+      return utils.render('html/login.html');
+    },
+
 
     'tasks': function() {
       console.log('tasks');
@@ -38,6 +49,7 @@ function initRouter() {
     'comments': function() {
       Tasks.renderComments();
     }
+
   });
 
   function notFound() {
