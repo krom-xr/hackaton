@@ -1,7 +1,7 @@
 const Roads = {
   renderIndex: async function() {
     await utils.render('html/index.html');
-    initMap();
+    //initMap();
     document.querySelector('.js-search-roads').click();
 
     const streetEl = document.querySelector('.streets');
@@ -19,7 +19,7 @@ const Roads = {
 
     const strNameEl = document.querySelector('.js-steet-name');
     strNameEl.innerHTML = street.pr_name;
-    initMap(id);
+    //initMap(id);
 
     var ctx = document.getElementById('myChart').getContext('2d');
 

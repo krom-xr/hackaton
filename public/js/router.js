@@ -42,17 +42,17 @@ function initRouter() {
 
 
     'tasks': function() {
-      console.log('tasks');
       Tasks.renderTasks();
     },
 
     'comments': function() {
       Tasks.renderComments();
     },
-    'maps': function () {
-      Tasks.renderMaps();
-      initMap();
-
+    'maps': async function () {
+      await Tasks.renderMaps();
+      setTimeout(()=> {
+        initMap();
+      }, 100);
     }
 
   });

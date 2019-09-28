@@ -12,7 +12,7 @@ const Tasks = {
   },
 
   renderMaps: async function() {
-
-    await utils.render('html/map.html')
+    const part = await utils.renderPartial('html/map.html')
+    document.querySelector('.base-holder').innerHTML = part;
   }
 }

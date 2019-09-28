@@ -1,10 +1,14 @@
 const utils = {
-  render: async (tpl, data) => {
+
+  renderPartial: async (tpl, data)=> {
     const html = await $.ajax({url: tpl});
     var tempFn = doT.template(html);
     var resultText = tempFn(data);
-    console.log(resultText);
+    return resultText;
+  },
 
-    document.body.innerHTML = resultText;
+  render: async (tpl, data) => {
+    const result = await utils.renderPartial(tpl, data)
+    document.body.innerHTML = result;
   }
 };
