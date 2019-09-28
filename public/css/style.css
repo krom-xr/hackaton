@@ -365,3 +365,8 @@ footer{
 .topi :nth-child(2){
   margin-right: 10px;
 } */
+
+.task-wrapper {
+  margin-bottom: 20px;
+  background: #e2e2e2;
+}
