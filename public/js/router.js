@@ -33,6 +33,10 @@ function initRouter() {
     'tasks': function() {
       console.log('tasks');
       Tasks.renderTasks();
+    },
+
+    'comments': function() {
+      Tasks.renderComments();
     }
   });
 
