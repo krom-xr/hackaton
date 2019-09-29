@@ -77,6 +77,40 @@ const Tasks = {
 
     const part = await utils.renderPartial('html/chat.html')
     document.querySelector('.base-holder').innerHTML = part;
+    VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+  },
+  renderTeam: async function() {
+    const part = await utils.renderPartial('html/team.html')
+    document.querySelector('.base-holder').innerHTML = part;
+    const token = JSON.parse(localStorage.getItem('token'));
+    //const access_token = 'ce5d831079300f2d18a47645b1223c489e255a8501b7213c295db064f8b9dacee6a594f97e1819ef366ba';
+
+    let vols = await $.ajax({
+      method: 'POST',
+      url: "http://185.20.224.177:8081/volonteers",
+      data: JSON.stringify({
+        token: token.access_token,
+      })
+    });
+    vols = JSON.parse(vols)
+    console.log(vols);
+
+    let html = '';
+    vols.items.forEach((v)=> {
+      html += `
+        <li style='margin-bottom: 20px'>
+          <a href="">
+            <img src="${v.photo}" style="width: 40px; height: 40px">
+          </a>
+          <a href="" style="padding-left: 10px">
+            <b>${v.first_name} ${v.last_name}</b>
+          </a>
+        </li>
+      `;
+    });
+    html = `<ul style="list-style: none">${html}</ul>`
+
+    document.querySelector('.volont').innerHTML = html;
   }
 
 }

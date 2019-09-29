@@ -73,6 +73,12 @@ function initRouter() {
         await Tasks.renderIndex();
 
       await Tasks.renderChat();
+    },
+    'team': async function () {
+      if (!document.querySelector('.base-holder'))
+        await Tasks.renderIndex();
+
+      await Tasks.renderTeam();
     }
 
   });

@@ -5,7 +5,6 @@ window.onload = async function() {
   //
 
   VK.init({apiId: 7151497, onlyWidgets: true});
-  VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
 
 
   $(document).on('click', '.js-click-on-login', async (e)=> {
