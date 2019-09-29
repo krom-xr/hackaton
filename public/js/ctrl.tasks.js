@@ -102,7 +102,7 @@ const Tasks = {
           <a href="">
             <img src="${v.photo}" style="width: 40px; height: 40px">
           </a>
-          <a href="" style="padding-left: 10px">
+          <a href="https://vk.com/id${v.id}" target="_blank" style="padding-left: 10px">
             <b>${v.first_name} ${v.last_name}</b>
           </a>
         </li>
