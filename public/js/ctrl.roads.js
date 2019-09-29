@@ -1,12 +1,18 @@
 const Roads = {
   renderIndex: async function() {
     await utils.render('html/index.html');
-    //initMap();
-    document.querySelector('.js-search-roads').click();
 
-    const streetEl = document.querySelector('.streets');
-    if (streetEl) {
-      streetEl.style.height = window.innerHeight - 250 + 'px';
+
+
+
+
+
+    //initMap();
+    //document.querySelector('.js-search-roads').click();
+
+    //const streetEl = document.querySelector('.streets');
+    //if (streetEl) {
+      //streetEl.style.height = window.innerHeight - 250 + 'px';
 
     }
 

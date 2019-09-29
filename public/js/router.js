@@ -1,8 +1,15 @@
 function initRouter() {
+
+
+  const token = localStorage.getItem('token');
+  if (!token)
+    location.hash = '#login';
+
   const route = Rlite(notFound, {
     // Default route
     '': function () {
-      Roads.renderIndex();
+      //Roads.renderIndex();
+      Tasks.renderTasks();
     },
 
     'street/:strId': function(data) {
@@ -40,19 +47,32 @@ function initRouter() {
       return utils.render('html/login.html');
     },
 
+    'tasks': async function() {
 
-    'tasks': function() {
       Tasks.renderTasks();
     },
 
-    'comments': function() {
+    'comments': async function() {
+      if (!document.querySelector('.base-holder'))
+        await Tasks.renderIndex();
+
+
       Tasks.renderComments();
     },
     'maps': async function () {
+      if (!document.querySelector('.base-holder'))
+        await Tasks.renderIndex();
+
       await Tasks.renderMaps();
       setTimeout(()=> {
         initMap();
       }, 100);
+    },
+    'chat': async function () {
+      if (!document.querySelector('.base-holder'))
+        await Tasks.renderIndex();
+
+      await Tasks.renderChat();
     }
 
   });
