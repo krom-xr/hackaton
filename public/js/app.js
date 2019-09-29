@@ -3,6 +3,11 @@ window.onload = async function() {
   //initMap();
   //
   //
+
+  VK.init({apiId: 7151497, onlyWidgets: true});
+  VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+
+
   $(document).on('click', '.js-click-on-login', async (e)=> {
     const res = await $.ajax({
       url: "http://185.20.224.177:8081/auth",
