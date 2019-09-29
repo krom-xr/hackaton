@@ -1,12 +1,63 @@
 const Tasks = {
+  renderTasksList: function(tasks) {
+    let st = '';
+    tasks.forEach((t)=> {
+      console.log('for each');
+      st = st + `
+        <div class='task-wrapper alert-info' style="border-radius: 10px">
+          <div>
+            <div style="width: 100%; text-align: center; padding: 14px">
+              <h4>${t.task_name}</h4>
+            </div>
+            <div style="width: 100%; text-align: center">
+              <div style="position: relative; width: 80%; height: 300px; background: #4978a7; display: inline-block; padding: 16px">
+                <div>
+                  <div style="color: whitesmoke; font-size: 16pt">
+                    ${t.task_comment}
+                  </div>
+                </div>
+                <!-- <div style="position: absolute; left: 4px; bottom: 4px; font-size: 40pt; color: white">
+                  16
+                </div> -->
+                <div style="position: absolute; left: 20px; bottom: 8px; font-size: 16pt; color: white">
+                  ${new Date(t.task_type).toLocaleDateString()}
+
+                </div>
+              </div>
+            </div>
+            <div style="font-size: 18pt; margin: 16px; text-align: center">
+              Тут еще какой-то текст описания задачи
+            </div>
+            <div style="padding: 8px; width: 100%;">
+              <div style="margin-bottom: 10px; text-align: center">
+                <button class="btn btn-success" style="font-size: 20pt" >Начать задачу</button>
+                <button class="btn btn-danger js-reject-task" style="font-size: 16pt" >Отложить</button>
+              </div>
+            </div>
+            <div style="margin-left: 20px; padding-bottom: 5px; color: orangered">Награда: 100 баллов</div>
+          </div>
+          <div class="clearfix"></div>
+        </div>`;
+    });
+
+    return st;
+  },
   renderIndex: async function() {
     await utils.render('html/index.html');
   },
   renderTasks: async function() {
 
-    const tasks = await $.ajax({url: 'http://185.20.224.177:8081/tasks'})
+    let tasks, tasksHtml;
+    try {
+      tasks = JSON.parse(await $.ajax({url: 'http://185.20.224.177:8081/tasks'}));
+      console.log(tasks);
+      tasksHtml = this.renderTasksList(tasks);
+    } catch (e) {
+      /* handle error */
+    }
 
     await utils.render('html/index.html');
+    document.querySelector('.tasks').innerHTML = tasksHtml;
   },
 
   //renderComments: async function() {

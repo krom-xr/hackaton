@@ -10,6 +10,13 @@ window.onload = async function() {
     localStorage.setItem('token', JSON.stringify(res));
     location.hash = '#tasks';
   });
+
+  $(document).on('click', '.js-reject-task', async (e)=> {
+    const el = e.currentTarget;
+    const parent = el.closest('.task-wrapper');
+    $(parent).hide({slow: true});
+    //parent.remove();
+  });
 }
 
 
