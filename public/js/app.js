@@ -17,6 +17,17 @@ window.onload = async function() {
     $(parent).hide({slow: true});
     //parent.remove();
   });
+
+  $(document).on('click', '.js-start-task', async (e)=> {
+    const el = e.currentTarget;
+    if (el.classList.contains('btn-success')) {
+      el.innerText = 'Завершить';
+      el.classList.add('btn-warning');
+      el.classList.remove('btn-success')
+    } else if (el.classList.contains('btn-warning'))
+      $(el.closest('.task-wrapper')).hide({slow: true});
+
+  });
 }
 
 

@@ -25,16 +25,15 @@ const Tasks = {
                 </div>
               </div>
             </div>
-            <div style="font-size: 18pt; margin: 16px; text-align: center">
-              Тут еще какой-то текст описания задачи
+            <div class="text-danger" style="font-size: 18pt; margin: 16px; text-align: center;">
+              Награда: ${_.shuffle([10, 30, 50, 100, 80, 70, 60])[0]} баллов!
             </div>
             <div style="padding: 8px; width: 100%;">
               <div style="margin-bottom: 10px; text-align: center">
-                <button class="btn btn-success" style="font-size: 20pt" >Начать задачу</button>
+                <button class="btn btn-success js-start-task" style="font-size: 20pt; max-width: 220px; overflow: hidden; color: white" >Начать задачу</button>
                 <button class="btn btn-danger js-reject-task" style="font-size: 16pt" >Отложить</button>
               </div>
             </div>
-            <div style="margin-left: 20px; padding-bottom: 5px; color: orangered">Награда: 100 баллов</div>
           </div>
           <div class="clearfix"></div>
         </div>`;
